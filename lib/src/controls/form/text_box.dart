@@ -25,7 +25,7 @@ class _TextBoxSelectionGestureDetectorBuilder
   final _TextBoxState _state;
 
   @override
-  void onSingleTapUp(TapUpDetails details) {
+  void onSingleTapUp(TapDragUpDetails details) {
     editableText.hideToolbar();
     super.onSingleTapUp(details);
     _state._requestKeyboard();
@@ -33,7 +33,7 @@ class _TextBoxSelectionGestureDetectorBuilder
   }
 
   @override
-  void onDragSelectionEnd(DragEndDetails details) {
+  void onDragSelectionEnd(TapDragEndDetails details) {
     _state._requestKeyboard();
   }
 }
